@@ -12,6 +12,7 @@ metadata:
 spec:
   {{- if eq .Values.certManager.kind "Deployment" }}
   replicas: {{ .Values.certManager.replicaCount }}
+  revisionHistoryLimit: {{ .Values.certManager.deploymentRevisionHistoryLimit }}
   {{- end }}
   selector:
     matchLabels:
